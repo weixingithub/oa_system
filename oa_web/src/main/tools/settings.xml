@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <localRepository>D:\maven\repository</localRepository>
+  
+  <pluginGroups>
+   
+  </pluginGroups>
+
+  
+  <proxies>
+    
+  </proxies>
+
+  
+  <servers>
+    <server>
+		<id>tomcat7</id>
+		<username>tomcat</username>
+		<password>tomcat</password>
+	</server>
+
+        <server>
+            <id>releases</id>
+            <username>admin</username>
+            <password>admin123</password>
+        </server>
+        <server>
+            <id>snapshots</id>
+            <username>admin</username>
+            <password>admin123</password>
+        </server>
+
+  </servers>
+
+  <!-- mirrors
+   | This is a list of mirrors to be used in downloading artifacts from remote repositories.
+   | 
+   | It works like this: a POM may declare a repository to use in resolving certain artifacts.
+   | However, this repository may have problems with heavy traffic at times, so people have mirrored
+   | it to several places.
+   |
+   | That repository definition will have a unique id, so we can create a mirror reference for that
+   | repository, to be used as an alternate download site. The mirror site will be the preferred 
+   | server for that repository.
+   |-->
+  <mirrors>
+    <!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    <mirror>
+      <id>mirrorId</id>
+      <mirrorOf>repositoryId</mirrorOf>
+      <name>Human Readable Name for this Mirror.</name>
+      <url>http://my.repository.com/repo/path</url>
+    </mirror>
+    <mirror>
+		<id>nexus</id>
+		<mirrorOf>*</mirrorOf>
+		<url>http://localhost:8081/nexus/content/groups/public/</url>
+	 </mirror> 
+     <mirror>      
+        <id>cica.es</id>      
+        <url>http://ftp.cica.es/mirrors/maven2</url>      
+        <mirrorOf>central</mirrorOf>      
+   </mirror> 
+    <mirror> 
+      <id>nexus</id> 
+      <mirrorOf>*</mirrorOf>
+      <url>http://192.168.1.215:8081/nexus/content/groups/public</url> 
+    </mirror> 
+     <mirror>
+           <id>ibiblio.org</id>
+           <name>ibiblio Mirror of http://repo1.maven.org/maven2/</name>
+           <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url> 
+           <mirrorOf>central</mirrorOf>     
+     </mirror>
+	  <mirror> 
+      <id>nexus</id> 
+      <mirrorOf>*</mirrorOf>
+      <url>http://192.168.1.215:8081/nexus/content/groups/public</url> 
+    </mirror> 
+     -->  
+	 <mirror>
+           <id>ibiblio.org</id>
+           <name>ibiblio Mirror of http://repo1.maven.org/maven2/</name>
+           <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url> 
+           <mirrorOf>central</mirrorOf>     
+     </mirror>
+
+  </mirrors>
+  <!-- profiles
+   | This is a list of profiles which can be activated in a variety of ways, and which can modify
+   | the build process. Profiles provided in the settings.xml are intended to provide local machine-
+   | specific paths and repository locations which allow the build to work in the local environment.
+   |
+   | For example, if you have an integration testing plugin - like cactus - that needs to know where
+   | your Tomcat instance is installed, you can provide a variable here such that the variable is 
+   | dereferenced during the build process to configure the cactus plugin.
+   |
+   | As noted above, profiles can be activated in a variety of ways. One way - the activeProfiles
+   | section of this document (settings.xml) - will be discussed later. Another way essentially
+   | relies on the detection of a system property, either matching a particular value for the property,
+   | or merely testing its existence. Profiles can also be activated by JDK version prefix, where a 
+   | value of '1.4' might activate a profile when the build is executed on a JDK version of '1.4.2_07'.
+   | Finally, the list of active profiles can be specified directly from the command line.
+   |
+   | NOTE: For profiles defined in the settings.xml, you are restricted to specifying only artifact
+   |       repositories, plugin repositories, and free-form properties to be used as configuration
+   |       variables for plugins in the POM.
+   |
+   |-->
+  <profiles>
+     <profile>
+       <id>nexus</id>
+       <repositories>
+          <repository>
+             <id>local-nexus</id>
+             <url>http://192.168.1.215:8081/nexus/content/groups/public/</url>
+             <releases>
+                  <enabled>true</enabled>
+             </releases>
+             <snapshots>
+                   <enabled>true</enabled>
+             </snapshots>
+          </repository>
+                <!-- Required for JBoss EL -->
+				<repository>
+					<id>jboss-public</id>
+					<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+				</repository>
+				<!-- Required for Liferay Portal Artifacts -->
+				<repository>
+					<id>liferay-public</id>
+					<url>https://repository.liferay.com/nexus/content/groups/public</url>
+				</repository>
+				<!-- Required for JSR 329 TCK -->
+				<repository>
+					<id>portletfaces-thirdparty</id>
+					<url>http://repository.portletfaces.org/content/repositories/thirdparty</url>
+				</repository>
+				<!-- Required for PrimeFaces 3.x Dependencies -->
+				<repository>
+					<id>primefaces-releases</id>
+					<url>http://repository.primefaces.org</url>
+				</repository>
+				 <repository>
+				  <id>people.apache.snapshots</id>
+				  <url>
+					http://repository.apache.org/content/groups/snapshots-group/
+				  </url>
+				  <releases>
+					<enabled>false</enabled>
+				  </releases>
+				  <snapshots>
+					<enabled>true</enabled>
+				  </snapshots>
+				</repository>
+        </repositories>
+        
+        <pluginRepositories>
+            <pluginRepository> 
+                  <id>local-nexus</id> 
+                  <url>http://192.168.1.215:8081/nexus/content/groups/public/</url> 
+                  <releases> 
+                     <enabled>true</enabled> 
+                  </releases> 
+                  <snapshots> 
+                     <enabled>true</enabled> 
+                  </snapshots> 
+            </pluginRepository> 
+            <pluginRepository>
+			  <id>apache.snapshots</id>
+			  <name>Apache Snapshots</name>
+			  <url>http://repository.apache.org/content/groups/snapshots-group/</url>
+			  <releases>
+				<enabled>false</enabled>
+			  </releases>
+			  <snapshots>
+				<enabled>true</enabled>
+			  </snapshots>
+			</pluginRepository>
+            <!-- Required for the maven-jdocbook-plugin -->
+				<pluginRepository>
+					<id>jboss-public</id>
+					<url>http://repository.jboss.org/nexus/content/groups/public-jboss</url>
+				</pluginRepository>
+				<!-- Required for the liferay-maven-plugin -->
+				<pluginRepository>
+					<id>liferay-public</id>
+					<url>https://repository.liferay.com/nexus/content/groups/public</url>
+				</pluginRepository>
+        </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <!-- activeProfiles| List of profiles that are active for all builds.-->
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+</settings>

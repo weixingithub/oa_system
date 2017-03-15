@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="oasystem" default="welcome">
+      
+	<!-- 显示欢迎信息以及操作提示 -->
+		<target name="welcome">
+			<echo>Activiti diagrams file deploy</echo>
+		</target>
+	
+	<!-- properties from key value -->
+	<property name="workflow.diagrams" value="src/main/resources/diagrams" />
+	<property name="workflow.deployments" value="src/main/resources/deployments" />
+
+	<!-- 流程定义：每个模块的路径 -->
+	<property name="wd.leave" value="${workflow.diagrams}/leave" />
+	<property name="wd.ConvenienceServices" value="${workflow.diagrams}/oaworkflow" />
+
+	
+	<!-- 请假流程定义打包-自定义表单 -->
+	<target name="workflow.package.leave">
+			<echo>打包流程定义：请假（自定义表单）</echo>
+			<copy file="${wd.leave}/leave.bpmn" tofile="${wd.leave}/leave.bpmn20.xml" />
+			<zip destfile="${workflow.deployments}/leave.bar" basedir="${wd.leave}" update="true" includes="*.xml,*.png" />
+			<delete file="${wd.leave}/leave.bpmn20.xml" />
+	</target>
+
+	
+	<!--便民服务发布流程表单 -->
+	<target name="workflow.package.ConvenienceServices">
+				<echo>打包流程定义：便民服务（自定义表单）</echo>
+				<copy file="${wd.ConvenienceServices}/ConvenienceServices.bpmn" tofile="${wd.ConvenienceServices}/ConvenienceServices.bpmn20.xml" />
+				<zip destfile="${workflow.deployments}/ConvenienceServices.bar" basedir="${wd.ConvenienceServices}" update="true" includes="*.xml,*.png" />
+				<delete file="${wd.ConvenienceServices}/ConvenienceServices.bpmn20.xml" />
+   </target>
+	
+	
+	
+	<!-- 流程定义打包 -->
+	<target name="workflow.package.all" depends="workflow.package.leave">
+	</target>
+</project>

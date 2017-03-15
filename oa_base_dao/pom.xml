@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>oa_system</groupId>
+    <artifactId>oa_system</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>oa_system</groupId>
+  <artifactId>oa_base_dao</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>oa_base_dao</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+   <dependencies>
+  <!-- 开发积累工具包 -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>oa_system</groupId>
+      <artifactId>oa_common</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <!-- hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.hibernate</groupId>
+		    <artifactId>hibernate-search</artifactId>
+		    <version>${hibernatesearch.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.annotations</groupId>
+			<artifactId>hibernate-commons-annotations</artifactId>
+			<version>4.0.2.Final</version>
+		</dependency> 
+        <dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<version>3.1.0.GA</version> 
+		</dependency>
+		<!-- spring data access -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring-data-jpa.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>junit</groupId>
+					<artifactId>junit-dep</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-commons</artifactId>
+			<version>1.8.2.RELEASE</version>
+		</dependency>
+
+			<!-- extra start jar -->
+		<dependency>
+		  <groupId>javassist</groupId>
+		  <artifactId>javassist</artifactId>
+		  <version>3.15.0</version>
+		  <classifier>GA</classifier>
+		</dependency> 
+		<dependency>
+		  <groupId>org.dom4j</groupId>
+		  <artifactId>dom4j</artifactId>
+		  <version>1.6.1</version>
+		</dependency>
+		<dependency>
+		  <groupId>antlr</groupId>
+		  <artifactId>antlr</artifactId>
+		  <version>2.7.7</version>
+		</dependency>
+		 <dependency>
+			  <groupId>javax.transaction</groupId>
+			  <artifactId>jta</artifactId>
+			  <version>oajta</version> 
+	       </dependency>
+        
+		<!-- extra end jar --> 
+		<!-- dbcp connection pool 
+	        <dependency>
+			  <groupId>commons-pool</groupId>
+			  <artifactId>commons-pool</artifactId>
+			  <version>1.5.4</version>
+	       </dependency>
+        
+	       <dependency>
+	          <groupId>org.apache.commons</groupId>
+	          <artifactId>commons-dbcp</artifactId>
+	          <version>${commons-dbcp.version}</version>
+	        </dependency>
+	        -->
+         <!-- ali connection pool -->
+           <dependency> 
+			  <groupId>com.alibaba</groupId>
+			  <artifactId>druid</artifactId>
+			  <version>1.0.26</version>
+		 </dependency>
+		<!-- jdbc driver -->
+		<dependency>
+			<groupId>${jdbc.driver.groupId}</groupId>
+			<artifactId>${jdbc.driver.artifactId}</artifactId>
+			<version>${jdbc.driver.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+  </dependencies>
+</project>

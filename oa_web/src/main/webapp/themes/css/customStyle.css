@@ -1,0 +1,120 @@
+
+.phoneBook h3,
+.newsTitle h3,
+.ProcessCenter h3{
+      color: #037acf;
+      padding: 5px 5px 5px 12px;
+      font-size: 1.3em;
+}
+.newsTitle ul li,
+.ProcessCenter ul li{
+      display: inline-block;
+      padding: 5px 10px 5px 10px;
+      font-size: 1.1em;
+      color: #545a61;
+}
+.phoneBook_list .list_title ul li.active,
+.newsTitle ul li.active,
+.ProcessCenter ul li.active{
+      color: #ff0708;
+      cursor: pointer;
+      font-weight: bold;
+}
+
+.ProcessCenterContent div{
+      width: 99%;
+      min-height: 260px;
+      display: none;
+      border: 1px #b8d0d6 solid;
+}
+
+.newsContent ul,
+.ProcessCenterContent div ul{
+      margin: 10px 10px 0 10px;
+}
+
+.ProcessCenterContent div ul li{
+      display: block;
+      border-bottom: dashed #b6d7ff 1px;
+      line-height: 15px;
+}
+.newsContent ul li{
+      width: auto;
+      margin: 8px 10px;
+      padding: 10px 10px;
+      background: #5babe2;
+}
+.newsContent ul li span{
+      display: block;
+      text-align: center;
+      line-height: 20px;
+      margin-top: 15px;
+      color: white;
+      font-size: 1.2em;
+}
+.ProcessCenterContent div ul li span{
+      float: right;
+      margin-right: 10px;
+}
+
+/*通信录*/
+.phoneBook{
+      width:300px;
+      height:360px;
+      margin: auto;
+      /*border:  solid black 1px;*/
+}
+.phoneBook h3{
+      /*border-bottom:#a5c6ee 1px solid;*/
+      margin-left: 5px;
+}
+
+.phoneBook .search{
+      width: 90%;
+      border-radius: 3px;
+      border: solid 1px #cbcbcb;
+      padding: 2px 0 ;
+      margin-top: 5px;
+      margin-left: 5px;
+}
+.phoneBook .search form{
+      display: inline-block;
+}
+.phoneBook .search input{
+      width: 140%;
+      border: none;
+}
+.phoneBook .search img{
+      float: right;
+      cursor: pointer;
+      margin-right: 6px;
+}
+.phoneBook_list{
+      width:300px;
+      height:260px;
+      /*border:  solid #e32ce2 1px;*/
+}
+.phoneBook_list .list_title{
+      /*border:  solid #3731d2 1px;*/
+}
+.phoneBook_list .list_title ul li{
+      display: inline-block;
+      padding: 5px 10px 5px 10px;
+      font-size: 1.1em;
+      color: #545a61;
+      cursor: pointer;
+}
+.phoneBook_list .list_content{
+      display:none;
+      margin-top:5px;
+      padding: 6px 6px 0 6px;
+      /*border:  solid #1ad22a 1px;*/
+}
+.phoneBook_list .list_content ul li{
+      padding: 4px 6px;
+      border-bottom: dashed 1px #a5c6ee;
+}
+
+.newsTitle h3{
+      margin-top: 20px;
+}
