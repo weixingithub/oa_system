@@ -8,6 +8,7 @@
     <project>oa_common</project>
     <project>oa_authority_bean</project>
     <project>oa_logger_module</project>
+    <project>oa_comment_module</project>
   </projects>
   <buildSpec>
     <buildCommand>

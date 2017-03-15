@@ -18,12 +18,9 @@
     <project>oa_population_module</project>
     <project>oa_cabinet_module</project>
     <project>oa_publishinfo_module</project>
+    <project>oa_comment_module</project>
     <project>oa_ireport</project>
     <project>oa_push</project>
-    <project>oa_wechat</project>
-    <project>oa_common</project>
-    <project>oa_weibo</project>
-    <project>oa_website</project>
   </projects>
   <buildSpec>
     <buildCommand>
