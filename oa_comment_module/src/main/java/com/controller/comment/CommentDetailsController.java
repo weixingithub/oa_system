@@ -35,7 +35,7 @@ public class CommentDetailsController {
 	
 	@Autowired
 	public void setCommentInfoService(CommentInfoService commentInfoService) {
-		this.commentInfoService = commentInfoService;
+		this.commentInfoService =  commentInfoService;
 	}
 
 	@Autowired
