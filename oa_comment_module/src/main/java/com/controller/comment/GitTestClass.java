@@ -2,7 +2,7 @@ package com.controller.comment;
 
 public class GitTestClass {
      private String testName;
-     private Integer gitAge;
+     private Integer   gitAge;
 	public String getTestName() {
 		return testName;
 	}
