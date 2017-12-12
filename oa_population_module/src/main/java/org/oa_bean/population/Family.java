@@ -20,7 +20,7 @@ import org.oa_bean.cabinet.FileCabinet;
 public class Family {
 	/**户籍基本信息(及家庭信息)**/
 	private Integer id; //id
-	private String householderID;//户籍编号
+	private String householNumber;//户籍编号
 	private String householdType;//户别   家庭户：1；集体户：2
 	private String doublefemaleHouseholds;//是否双女户  是：1；否：0
 	private String householderName;//户主姓名
