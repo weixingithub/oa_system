@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * 人口计生基础信息
+ * 人口计生^^基础信息
  * @author Administrator
  * @date 2016年7月1日
  * @company
