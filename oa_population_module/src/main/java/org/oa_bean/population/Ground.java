@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="c_ground")
 public class Ground {
-	/**土地11管理**/
+	/**土地22管理**/
 	private Integer id;
 	private String arableArea;// 耕地面积  单位：亩
 	private String subsidyAmount;// 直补金额 单位：元
